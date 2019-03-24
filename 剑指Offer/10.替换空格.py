@@ -10,14 +10,14 @@ class Solution:
     def replaceSpace(self, s):
         return s.replace(" ", "%20")
 
-    # def replaceSpace1(self, s):
-    #     s_list = []
-    #     for i in s:
-    #         if i == " ":
-    #             s_list.append("%20")
-    #         else:
-    #             s_list.append(i)
-    #     return "".join(s_list)
+    def replaceSpace1(self, s):
+        s_list = []
+        for i in s:
+            if i == " ":
+                s_list.append("%20")
+            else:
+                s_list.append(i)
+        return "".join(s_list)
 
 
 s = "We Are Happy"
