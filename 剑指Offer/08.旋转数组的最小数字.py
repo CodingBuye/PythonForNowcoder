@@ -11,9 +11,20 @@ class Solution:
     def minNumberInRotateArray(self, rotateArray):
         if len(rotateArray) == 0:
             return 0
-        
-        pass
+        minor = rotateArray[0]
+        left = 0
+        right = len(rotateArray)-1
+        while left <= right:
+            mid = left + (right-left) // 2
+            if rotateArray[mid] > minor:
+                left = mid+1
+            elif rotateArray[mid] < minor:
+                minor = rotateArray[mid]
+                right = mid - 1
+            else:
+                left += 1
+        return minor
 
 
-rotate = [3, 4, 5, 1, 2]
+rotate = [-1, 4, 5, 0, 7]
 Solution().minNumberInRotateArray(rotate)
