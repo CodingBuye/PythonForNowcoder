@@ -12,4 +12,20 @@ class ListNode:
 
 class Solution:
     def FindKthToTail(self, head, k):
-        pass
+        arr = []
+        while head:
+            arr.append(head)
+            head = head.next
+        if k > len(arr) or k <= 0:
+            return None
+        return arr[-k]
+
+
+node1 = ListNode(1)
+node2 = ListNode(2)
+node3 = ListNode(3)
+node1.next = node2
+node2.next = node3
+
+node = Solution().FindKthToTail(node1, 1)
+print(node.val)
