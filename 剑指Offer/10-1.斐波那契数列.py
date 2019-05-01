@@ -7,12 +7,12 @@ n<=39
 
 class Solution:
     def Fibonacci(self, n):
-        if n == 0 or n == 1:
-            return n
-        res = [1, 2]
+        # if n == 0 or n == 1:
+        #     return n
+        res = [0, 1]
         while len(res) <= n:
             res.append(res[-1]+res[-2])
-        return res[n-2]
+        return res[n]
 
 
 w = Solution().Fibonacci(3)
