@@ -20,14 +20,23 @@ class Solution:
                 continue
 
             if numbers[start] == numbers[numbers[start]]:
-                duplication[0] = numbers[start]
+                if duplication is None:
+                    duplication = []
+                if len(duplication) == 0:
+                    duplication.append(numbers[start])
+                else:
+                    duplication[0] = numbers[start]
+                # duplication.append(numbers[start])
                 return True
 
-            numbers[start], numbers[numbers[start]] = numbers[numbers[start]], numbers[start]
+            temp1 = numbers[start]
+            temp2 = numbers[numbers[start]]
+            numbers[start] = temp2
+            numbers[temp1] = temp1
         return False
 
 
-# if __name__ == '__main__':
-#     s = Solution()
-#     r = s.duplicate([2, 3, 1, 0, 2, 5, 3], [0])
-#     print(r)
+if __name__ == '__main__':
+    s = Solution()
+    r = s.duplicate([2, 3, 1, 0, 2, 5, 3], None)
+    print(r)
