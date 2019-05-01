@@ -23,3 +23,13 @@ class Solution:
                 return self.stack2.pop()
             else:
                 return None
+
+
+if __name__ == '__main__':
+    s = Solution()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    s.pop()
+    print(s.stack1)
+    print(s.stack2)
