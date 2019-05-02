@@ -28,16 +28,16 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 
 class Solution:
     def minNumberInRotateArray(self, rotateArray):
-        # write code here
         if rotateArray is None or len(rotateArray) == 0:
             return 0
         index1 = 0
-        index2 = len(rotateArray) - 1
+        index2 = len(rotateArray)-1
         index_mid = index1
         while rotateArray[index1] >= rotateArray[index2]:
             if index2 - index1 == 1:
                 index_mid = index2
                 break
+
             index_mid = index1 + (index2 - index1) // 2
 
             if rotateArray[index1] == rotateArray[index2] == rotateArray[index_mid]:
@@ -51,11 +51,11 @@ class Solution:
 
     def min_in_order(self, rotateArray, index1, index2):
         res = rotateArray[index1]
-        for i in range(index1 + 1, index2 + 1):
+        for i in range(index1+1, index2+1):
             if res > rotateArray[i]:
                 res = rotateArray[i]
         return res
 
 
-rotate = [-1, 4, 5, 0, 7]
-Solution().minNumberInRotateArray(rotate)
+rotate = [4, 5, 7, -1, 0]
+print(Solution().minNumberInRotateArray(rotate))
