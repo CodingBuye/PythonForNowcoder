@@ -4,6 +4,8 @@
 每段绳子的长度记为k[0],k[1],...,k[m],
 求k[0]×k[1]×...×k[m]乘积最大是多少？
 """
+
+
 class Solution:
 
     def max_product_after_cutting_solution1(self, length):
@@ -24,7 +26,23 @@ class Solution:
             products.append(max_val)
         return products[length]
 
+    # 贪婪算法
+    def max_product_after_cutting_solution2(self, length):
+        if length < 2:
+            return 0
+        if length == 2:
+            return 1
+        if length == 3:
+            return 2
+
+        time_of_3 = length // 3
+        if length - time_of_3*3 == 1:
+            time_of_3 -= 1
+        time_of_2 = (length-time_of_3*3) // 2
+        return pow(3, time_of_3) * pow(2, time_of_2)
+
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.max_product_after_cutting_solution1(8))
+    print(s.max_product_after_cutting_solution1(5))
+    print(s.max_product_after_cutting_solution2(8))
