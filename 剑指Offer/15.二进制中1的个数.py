@@ -6,15 +6,15 @@
 
 
 class Solution:
-     def NumberOf1(self, n):
-         if n < 0:
-             n = n & 0xffffffff
-         k = 0
-         while n:
-             k += 1
-             n = (n-1) & n
-         return k
+    def NumberOf1(self, n):
+        if n < 0:
+            n = n & 0xffffffff
+        k = 0
+        while n:
+            k += 1
+            n = (n - 1) & n
+        return k
 
 
 if __name__ == '__main__':
-    print(Solution().NumberOf1(9))
+    print(Solution().NumberOf1(-1))
