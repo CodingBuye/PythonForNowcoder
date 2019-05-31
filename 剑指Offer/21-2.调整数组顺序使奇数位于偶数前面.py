@@ -19,6 +19,19 @@ class Solution:
         odd.extend(even)
         return odd
 
+    def re_order_array(self, array):
+        # 借助插入排序的思想
+        k = 0
+        for i in range(len(array)):
+            if array[i] % 2 == 1:
+                j = i
+                while j > k:
+                    array[j], array[j-1] = array[j-1], array[j]
+                    j -= 1
+                k += 1
+        return array
 
-arr = [1]
-print(Solution().reOrderArray(arr))
+
+if __name__ == '__main__':
+    a = [1,3,6,8,2,4,7]
+    print(Solution().re_order_array(a))
