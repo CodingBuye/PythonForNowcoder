@@ -1,5 +1,6 @@
 """
 题目描述
+<<<<<<< Updated upstream
 输入一个整数，输出该数二进制表示中1的个数。
 其中负数用补码表示。
 """
@@ -18,3 +19,4 @@ class Solution:
 
 if __name__ == '__main__':
     print(Solution().NumberOf1(-1))
+

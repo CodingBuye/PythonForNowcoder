@@ -1,5 +1,6 @@
 """
 题目描述：
+<<<<<<< Updated upstream
 给你一根长度为n的绳子，请把绳子剪成m段(m、n都是整数，并且n>1,m>1).
 每段绳子的长度记为k[0],k[1],...,k[m],
 求k[0]×k[1]×...×k[m]乘积最大是多少？
@@ -46,3 +47,4 @@ if __name__ == '__main__':
     s = Solution()
     print(s.max_product_after_cutting_solution1(5))
     print(s.max_product_after_cutting_solution2(8))
+
