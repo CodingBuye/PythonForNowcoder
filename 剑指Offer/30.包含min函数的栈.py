@@ -16,14 +16,14 @@ class Solution:
         self.stack1.append(node)
 
         # 获取最小值
-        minest = self.min()
-        if not minest:
+        minimum = self.min()
+        if not minimum:
             self.stack2.append(node)
         else:
-            if node < minest:
+            if node < minimum:
                 self.stack2.append(node)
             else:
-                self.stack2.append(minest)
+                self.stack2.append(minimum)
 
     def pop(self):
         if self.stack1:
